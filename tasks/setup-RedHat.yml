@@ -10,3 +10,14 @@
 - name: RedHat | Install Packages
   yum: name={{ item }} state=installed
   with_items: mongodb_packages
+
+- name: MongoDB smallFiles
+  copy: src=mongodb.conf dest=/etc/
+  tags:
+    - mono
+
+- name: MongoDB restart
+  service: name=mongod state=restarted
+  tags:
+    - mono
+
