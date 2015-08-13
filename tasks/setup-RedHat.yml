@@ -12,7 +12,7 @@
   with_items: mongodb_packages
 
 - name: MongoDB smallFiles
-  copy: src=mongodb.conf dest=/etc/
+  copy: src=mongod.conf dest=/etc/
   tags:
     - mono
 
