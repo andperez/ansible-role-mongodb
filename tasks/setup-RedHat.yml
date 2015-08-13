@@ -13,16 +13,10 @@
 
 - name: MongoDB smallFiles
   copy: src=mongodb.conf dest=/etc/
-  tags:
-    - mono
+
+- name: MongoDB smallFiles
+  copy: src=mongod.conf dest=/etc/
 
 - name: MongoDB restart
   service: name=mongod state=restarted
-  tags:
-    - mono
 
-- name: mongo ports open on firewallD
-  firewalld: port={{ item }} permanent=true state=enabled
-  with_items:
-    - 27017/tcp
-    - 27017/udp
