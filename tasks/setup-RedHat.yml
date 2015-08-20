@@ -21,4 +21,4 @@
   service: name=mongod state=restarted
 
 - name: FirewallD mongodb rule add
-  firewalld: port={{ pumukit2_mongodb_port }}/tcp permanent=true state=enabled
+  firewalld: port={{ pumukit2_mongodb_port }}/tcp permanent=true state=enabled immediate=yes
