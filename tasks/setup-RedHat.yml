@@ -22,3 +22,4 @@
 
 - name: FirewallD mongodb rule add
   firewalld: port={{ pumukit2_mongodb_port }}/tcp permanent=true state=enabled immediate=yes
+  when: firewalld is defined
