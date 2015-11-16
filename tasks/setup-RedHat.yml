@@ -8,7 +8,7 @@
   template: src=mongodb.repo.j2 dest=/etc/yum.repos.d/mongodb.repo
 
 - name: RedHat | Install Packages
-  yum: name={{ item }} state=installed
+  yum: name={{ item }} state=installed enablerepo=mongodb-org-3.0
   with_items: mongodb_packages
 
 - name: MongoDB smallFiles
